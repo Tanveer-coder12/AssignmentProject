@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     private Tiles selectedTile;
     public int cubenum;
     public List<Cubemanager> cubeslist = new List<Cubemanager>();
+
+    public GameObject HelpPanel;
     
     private void Awake()
     {
@@ -23,6 +25,10 @@ public class GameManager : MonoBehaviour
         selectedTile = tile;
     }
 
+    private void Start()
+    {
+        HelpPanel.SetActive(false);
+    }
     void Update()
     {
         if(Input.GetAxisRaw("Mouse ScrollWheel") > 0f) // forward
@@ -61,5 +67,17 @@ public class GameManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene("GameScene");
+    }
+    public void HelpPanelMethod()
+    {
+        HelpPanel.SetActive(true);
+    }
+    public void Back_Button_In_Help()
+    {
+        HelpPanel.SetActive(false);
+    }
+    public void BackButton()
+    {
+        SceneManager.LoadScene("StartGameScene");
     }
 }
