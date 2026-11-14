@@ -79,6 +79,6 @@ public class GameManager : MonoBehaviour
     public void BackButton()
     {
         SceneManager.LoadScene("StartGameScene");
-        Debug.Log("Hello");
+       
     }
 }
