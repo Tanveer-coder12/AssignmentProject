@@ -3,19 +3,19 @@ using UnityEngine;
 
 public class CubeScr : MonoBehaviour
 {
-    public Renderer Rn;
-    public float Boundry;
+    public Renderer Rn;// Renderer for Cube materials
+    public float Boundry; // Boundries for cube
 
-    public AudioSource Ad;
+    public AudioSource Ad; // Audio source
     private void Awake()
     {
-        Rn = GetComponent<Renderer>();
+        Rn = GetComponent<Renderer>(); 
         Ad = GetComponent<AudioSource>();
         
     }
     private void Start()
     {
-        Boundry = FindFirstObjectByType<GridManager>().width-0.3f;
+        Boundry = FindFirstObjectByType<GridManager>().width-0.3f;// Take width from Grid Manager and assigning back to boundries
     }
     void Update()
     {
